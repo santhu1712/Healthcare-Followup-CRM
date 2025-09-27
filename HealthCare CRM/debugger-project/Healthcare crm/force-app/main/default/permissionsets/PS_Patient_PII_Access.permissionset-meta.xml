@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PermissionSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Allows access to patient PII fields for licensed doctors</description>
+    <hasActivationRequired>false</hasActivationRequired>
+    <label>PS_Patient_PII_Access</label>
+</PermissionSet>

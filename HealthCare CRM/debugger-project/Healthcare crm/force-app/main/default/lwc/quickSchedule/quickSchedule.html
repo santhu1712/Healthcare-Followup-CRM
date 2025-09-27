@@ -1,0 +1,32 @@
+<template>
+  <lightning-card title="Quick Schedule" icon-name="standard:calendar">
+    <div class="slds-p-around_small">
+      <lightning-combobox
+        name="patient"
+        label="Patient"
+        options={patientOptions}
+        value={selectedPatientId}
+        placeholder="Select Patient"
+        onchange={handlePatientChange}>
+      </lightning-combobox>
+
+      <div class="slds-m-top_small">
+        <lightning-input
+          type="datetime-local"
+          label="Appointment Date & Time"
+          value={appointmentDateTime}
+          onchange={handleDateChange}>
+        </lightning-input>
+      </div>
+
+      <div class="slds-m-top_small">
+        <lightning-button
+          variant="brand"
+          label="Create Appointment"
+          onclick={handleCreateAppointment}
+          disabled={isCreating}>
+        </lightning-button>
+      </div>
+    </div>
+  </lightning-card>
+</template>

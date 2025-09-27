@@ -1,0 +1,40 @@
+<template>
+  <lightning-card title="Upcoming Follow-ups" icon-name="standard:task">
+    <div class="slds-p-around_small">
+      <template if:true={patientName}>
+        <p class="slds-text-title_small">Patient: {patientName}</p>
+      </template>
+
+      <template if:true={followUps.length}>
+        <table class="slds-table slds-table_cell-buffer slds-table_bordered">
+          <thead>
+            <tr class="slds-text-title_caps">
+              <th scope="col">Date</th>
+              <th scope="col">Notes</th>
+              <th scope="col">Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            <template for:each={followUps} for:item="fu">
+              <tr key={fu.Id}>
+                <td>{fu.Follow_Up_Date__c}</td>
+                <td>{fu.Follow_Up_Notes__c}</td>
+                <td>
+                  <lightning-button variant="neutral" label="Open" data-id={fu.Id} onclick={navigateToFollowUp}></lightning-button>
+                </td>
+              </tr>
+            </template>
+          </tbody>
+        </table>
+      </template>
+
+      <template if:false={followUps.length}>
+        <div class="slds-p-top_small">No upcoming follow-ups.</div>
+      </template>
+
+      <div class="slds-m-top_small">
+        <lightning-button label="Create Follow-up (+7 days)" onclick={handleCreateFollowUp}></lightning-button>
+      </div>
+    </div>
+  </lightning-card>
+</template>
