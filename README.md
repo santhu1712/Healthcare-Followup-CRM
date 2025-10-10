@@ -30,6 +30,6 @@ This impacts both **patient health outcomes** and **hospital efficiency**.
 ## 🛠️ Tech Stack  
 - **Platform:** Salesforce (Developer Edition)  
 - **Tools:** Service Cloud, Custom Objects, Flows, Reports & Dashboards  
-- **Languages:** Apex, SOQL, LWC *(planned for future phases)*  
+- **Languages:** Apex, SOQL, LWC   
 
 ---
